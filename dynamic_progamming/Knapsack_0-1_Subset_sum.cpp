@@ -56,9 +56,9 @@ int dp[N][N],
     n, total;
 
 // solution = knapDown(0, W);
-// 0 indexed
+// 1 indexed for practical reason
 int knapDown(int i, int remW) {
-    if(i == n or remW == 0) return 0;
+    if(i > n or remW == 0) return 0;
     if(dp[i][remW] != -1)   return dp[i][remW];
     if(w[i] > remW)         return knapDown(i + 1, remW);
     return dp[i][remW] = max(knapDown(i + 1, remW),
@@ -86,8 +86,8 @@ int main() {
 
     memset(dp, -1, sizeof dp);
     cin >> n >> total;
-    for(int i = 0; i < n; ++i) cin >> w[i];
-    for(int i = 0; i < n; ++i) cin >> v[i];
+    for(int i = 1; i <= n; ++i) cin >> w[i];
+    for(int i = 1; i <= n; ++i) cin >> v[i];
 
     cout << knapDown(0, total) << "\n";
     cout << knapUp(n, total) << "\n";

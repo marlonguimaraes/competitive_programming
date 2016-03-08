@@ -1,0 +1,2 @@
+multigraph: a graph where there is at least one multiple edge.
+multiple edge: given two vertex u, v there if there is more than one edge from u to v, this edge is called multiple edge.

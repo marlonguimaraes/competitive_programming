@@ -1,27 +1,43 @@
 // Floyd-Algorithm: solves all pairs shortest paths in O(n^3)
 
 /* INTUITION:
- *  
- *  There are three options to go to vertex j from vertex i
- *  a) there is no path from i to j;
- *  b) use the edge (i, j), if it exists (not necessarily the shortest path)
- *  c) use some vertex k as an intermediate vertex, so the path would be = i ... -> k -> ... -> j;
- *     NOTE that maybe the edges (i, k) and (k, j) are not used.
  *
- *  the shortest path will be the path dist[i][k] = min(dist[i][k] + dist[k][j]) for all k E {0, 1, ..., V - 1}
- *  base cases: dist[i][j] = weight(i, j),
- *                           or INF if there isn't such an edge;
+ *  Consider all paths from i to j which intermediate vertex from the set {1, 2, ..., k}
+ *  If the path from i to j uses no intermediate vertex at all, k = 0, i.e it's an edge (i, j) e E;
+ *    
+ *  Let p be the minimum weight path between all paths from i to j using some vertex u as an intermediate vertex;
+ *  If u is not k:
+ *      So u < k, therefore the vertex u used in the minimum weight path is in the set {1, 2, ..., k - 1}
+ *  If u is k: (k is the intermediate vertex in the path p with minimum weight;
+ *      If u = k, then path p can be decomposed in two paths;
+ *      p = path(i, k) ~ path(k, j);
+ *      Consider the path(i, k). This must be the minimum weight path from i to k;
+ *      Samething for the path(k, j);
+ *      So, 2 subproblems arise: path(i, k) and path(k, j);
+ *      path(i, k) uses only intermediate vertex in set (1, 2, ..., k - 1), otherwise it would use k twice;
+ *      Samething for path(k, j);
  *
- *  DP SOLUTION:
+ *  DP solution:
+ *  let f(k, i, j) be the minimum weight path from i to j using vertices from (1, 2, ..., k) as intermediate vertices;
+ *  the solution to our problem would be f(k = n, i, j) considering all possible intermediate vertices;
+ *  Note that f(0, i, j) no intermediate vertices are used, so the solution must be edge(i, j) if it exists;
  *
- *  sp(i, j, k) = shortest path between i and j using all vertices in {0, 1, ..., k} as intermediate vertex
- *  sp(i, j, -1) = weight(i, j);
- *  sp(i, j, k) = min(sp(i, j, k - 1), sp(i, k, k - 1) + sp(k, j, k - 1));
- *              = min(using vertex k, not using vertex k as intermediate vertex);
- *      
- *  BOTTON UP:
- *      note that the solution for k uses only the information about the table for k - 1, so the problem is solvable O(n ^ 2) in memory
- */
+ *  back to f(k, i, j) = f(k - 1, i, j) if k is not an intermediate vertex which produces the minimum weight path
+ *                                     between all vertices in {1, 2, ..., k},
+ *                                     therefore, the vertex which produces can only be in set {1, 2, ..., k - 1}
+ *
+ *          f(k, i, j) = f(k - 1, i, k) + f(k - 1, k, j) if k when used as an intermediate vertex from path i, j,
+ *                                                       produces a minimum weight path between all possible vertices in set (1, 2, ..., k);
+ *          If so, two subproblems arise: what is the best path for i to k? and from k to j?
+ *          I don't know, but the solution for i to k must not use k as an intermediate vertex, otherwise it wouldn't be optmal;
+ *          So the solution for i to k bust use only vertices in set {1, 2, ..., k - 1};
+ *          Samething for j to k;
+ *
+ *          How do you know if k is or isn't the best intermediate vertex?
+ *          DP gives 0 fucks, just calculate the best of the two options;
+ *          f(k, i, j) = min(f(k - 1, i, j), f(k - 1, i, k) + f(k - 1, k, j));
+ *
+*/
 
 #include <bits/stdc++.h>
 

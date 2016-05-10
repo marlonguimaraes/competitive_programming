@@ -54,12 +54,10 @@ void makeDag() {
     }
 
     set<ii> edges;
-    for(vi next : components) {
-        for(int u : next) {
-            for(int v : adj[u]) {
-                if(getComponent[u] != getComponent[v])
-                    edges.insert(ii(getComponent[u], getComponent[v]));
-            }
+    for(int u = 1; u <= V; ++u) {
+        for(int v : adj[u]) {
+            if(getComponent[u] != getComponent[v])
+                edges.insert(ii(getComponent[u], getComponent[v]));
         }
     }
 

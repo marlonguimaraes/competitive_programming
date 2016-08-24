@@ -33,14 +33,15 @@ using namespace std;
  *	for k = log_2(j - i + 1);
 
  *	if (j - i + 1) is a power of two, we have floor(k) = k, and M[i][k] will correctly give the answer;
+
  *	If it's not a power of two, we have 
- *			k = floor(log_2(j - i + 1));
- *			since k is "floored", 2 ^ k < (j - i + 1) < 2 ^ (k + 1)
- *			Once we take 2 subarrays of length 2 ^ k, one starting at i, and the second starting at (j - 2 ^ k + 1);
- *			We will definetly have an overlap inside [i, j], since 2 * (2 ^ k) = 2 ^ (k + 1) < (j - i + 1),
- 			thus, it's guaranted that the whole interval [i, j] is covered by both arrays;
-			It's also important to see that, although the sum of length of both arrays is greater than (j - i + 1),
-			no element outside [i, j] will be considered in the RMQ(i, j) query because both subarrays have an overlap
+ *	k = floor(log_2(j - i + 1));
+ *	since k is "floored", 2 ^ k < (j - i + 1) < 2 ^ (k + 1)
+ *	Once we take 2 subarrays of length 2 ^ k, one starting at i, and the second starting at (j - 2 ^ k + 1);
+ *	We will definetly have an overlap inside [i, j], since 2 * (2 ^ k) = 2 ^ (k + 1) < (j - i + 1),
+ *	thus, it's guaranted that the whole interval [i, j] is covered by both arrays;
+ *	It's also important to see that, although the sum of length of both arrays is greater than (j - i + 1),
+ *	no element outside [i, j] will be considered in the RMQ(i, j) query because both subarrays have an overlap
 
  */
 

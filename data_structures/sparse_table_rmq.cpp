@@ -31,20 +31,17 @@ using namespace std;
  *	RMQ(i, j) = M[i][k], or
  *	            M[j - 2 ^ k + 1][k]
  *	for k = log_2(j - i + 1);
- *	Note that if (j - i + 1) is a power of two, the answer is pretty easy to see: M[i][k];
- *	If not, we have to prove that the intervals covered by M[i][k] and M[j - 2 ^ k + 1][k] cover only the interval [i, j]
- *
- *	1) M[i][k] covers [i, i + 2 ^ k - 1];
- *	2) M[j - 2 ^ k + 1][k] covers [j - 2 ^ k + 1, (j - 2 ^ k + 1) + (2 ^ k - 1)] =
- *			   				      [j - 2 ^ k + 1, j]
 
- *	1) (i + 2 ^ k - 1) is <= j in the case where k is a power of two, so it's also <= j in the case floor(log_2(k));
- *	1) so the interval covered by M[i][k] is completly inside [i, j];
+ *	if (j - i + 1) is a power of two, we have floor(k) = k, and M[i][k] will correctly give the answer;
+ *	If it's not a power of two, we have 
+ *			k = floor(log_2(j - i + 1));
+ *			since k is "floored", 2 ^ k < (j - i + 1) < 2 ^ (k + 1)
+ *			Once we take 2 subarrays of length 2 ^ k, one starting at i, and the second starting at (j - 2 ^ k + 1);
+ *			We will definetly have an overlap inside [i, j], since 2 * (2 ^ k) = 2 ^ (k + 1) < (j - i + 1),
+ 			thus, it's guaranted that the whole interval [i, j] is covered by both arrays;
+			It's also important to see that, although the sum of length of both arrays is greater than (j - i + 1),
+			no element outside [i, j] will be considered in the RMQ(i, j) query because both subarrays have an overlap
 
- *	2) we now have to prove that i <= (j - 2 ^ k + 1) < (i + 2 ^ k), so [i, j] can be completly covered.
- *	2) this is proved by some tedious algebra.
- *
- * The intuiton, however, is that we divide [i, j] in two subarrays, completly inside [i][j], such that they both together cover the whole interval [i, j];
  */
 
 inline int log_2(int i) {

@@ -1,3 +1,5 @@
+// Based on https://github.com/edsomjr/TEP/blob/master/Geometria%20Computacional/Pontos.md
+
 #include <bits/stdc++.h>
 
 #define debug(x) cout << "> " << #x << " = " << x << endl;

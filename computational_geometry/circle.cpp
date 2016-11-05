@@ -1,3 +1,8 @@
+/*
+ * This code is taken from https://github.com/edsomjr/TEP/blob/master/Geometria%20Computacional/Circulos.md
+ * the license it's the same as the source.
+ */
+
 #include <bits/stdc++.h>
 
 #define debug(x) cout << "> " << #x << " = " << x << endl;

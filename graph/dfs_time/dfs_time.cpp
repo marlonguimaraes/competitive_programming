@@ -14,6 +14,17 @@ vector<int> adj[N];
 int when = 0;
 int first[N], last[N];
 bool vis[N];
+
+/** Properties for G(V, E):
+  * Let u, v be any two vertices in V
+  * interval A = [first[u], last[u]] is either completely inside interval B = [first[v], last[v]]
+  * or it's completely outside of B.
+  *
+  * If A is inside B: u is a descendent of v in DFS forest;
+  * If A and B is disjoint: u and b belong to different trees in the DFS forest of trees, i.e they are unrelated.
+  */
+
+
 void dfs(int u) {
     ++when;
     first[u] = when;

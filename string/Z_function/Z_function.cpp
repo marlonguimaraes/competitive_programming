@@ -13,20 +13,21 @@ using namespace std;
 inline vector<int> z_function(const string &s) {
     int n = s.size();
     vector<int> z(n);
-    int l = 0;
+	int l = 0;
     int r = 0;
     for(int i = 1; i < n; ++i) {
         if(i <= r) {
-            z[i] = min(z[i - l], r - l + 1);
+            z[i] = min(z[i - l], r - i + 1);
         }
         while((i + z[i]) < n and (s[i + z[i]] == s[z[i]])) {
             ++z[i];
         }
         if(r < (i + z[i] - 1)) {
             l = i;
-            r = i + z[i] - 1;
+            r = (i + z[i] - 1);
         }
     }
+
     return z;
 }
 

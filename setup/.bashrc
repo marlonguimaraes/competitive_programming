@@ -59,3 +59,27 @@ mkcd () {
   mkdir "$1"
     cd "$1"
 }
+
+function checker() {
+	cmpp $1
+	mv prog a_prog
+
+	cmpp $2 
+	mv prog b_prog
+
+	while true
+	do
+		python3 $3 > in_checker
+		cat in_checker | ./a_prog > a_out
+		cat in_checker | ./b_prog > b_out
+
+		DIFF=$(diff a_out b_out)
+		if [ "$DIFF" != "" ]
+		then
+			echo "BOOM! FOUND DIFFERENCE!"
+			break
+		fi
+		echo "OK!"
+	done
+}
+

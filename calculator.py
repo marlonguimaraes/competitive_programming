@@ -38,3 +38,30 @@ def derrangement(n):
         a = b
         b = c
     return c
+
+def primes_up_to(n):
+    n += 1
+    primes = []
+    sieve = [True for i in range(n)]
+    for i in range(2, n):
+        if sieve[i]:
+            primes.append(i)
+            for j in range(i * i, n, i):
+                sieve[j] = False
+    return primes
+
+def factorize(n):
+    primes = primes_up_to(int(sqrt(n) + 5))
+    factors = {}
+    for p in primes:
+        if p > n:
+            break
+        count = 0
+        while n % p == 0:
+            count += 1
+            n /= p
+        if count > 0:
+            factors[p] = count
+    if n > 1:
+        factors[n] = 1
+    return factors

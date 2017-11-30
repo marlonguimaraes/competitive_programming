@@ -24,3 +24,17 @@ def catalan(n):
     num = binom(2 * n, n)
     res = num / den
     return res
+
+def derrangement(n):
+    if n == 0:
+        return 1
+    if n == 1:
+        return 0
+    a = 1
+    b = 0
+    c = 0
+    for i in range(2, n + 1):
+        c = (i - 1) * (a + b)
+        a = b
+        b = c
+    return c

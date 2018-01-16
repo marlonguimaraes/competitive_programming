@@ -1,13 +1,8 @@
 # competitive_progamming
 
-[create an anchor](1)
 
-[create an anchor](#anchors-in-markdown)
+[create an anchor](#anchor1)
 
-[create an anchor](#anchors-in-markdown)
+[create an anchor](#anchor2)
 
-[create an anchor](#anchors-in-markdown)
-
-[create an anchor](#anchors-in-markdown)
-
-[create an anchor](#anchors-in-markdown)
+[create an anchor](#anchor3)

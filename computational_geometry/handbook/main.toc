@@ -1,0 +1,2 @@
+\contentsline {section}{Geometry}{3}{section*.2}% 
+\contentsline {subsection}{Points and Lines}{3}{section*.3}% 

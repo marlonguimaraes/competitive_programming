@@ -1,2 +1,12 @@
-\BOOKMARK [1][-]{section*.2}{Geometry}{}% 1
-\BOOKMARK [2][-]{section*.3}{Points and Lines}{section*.2}% 2
+\BOOKMARK [1][-]{section*.2}{Points}{}% 1
+\BOOKMARK [2][-]{section*.3}{Comparing floating point values}{section*.2}% 2
+\BOOKMARK [1][-]{section*.4}{Lines}{}% 3
+\BOOKMARK [2][-]{section*.5}{General equation of a line}{section*.4}% 4
+\BOOKMARK [2][-]{section*.6}{General equation of a line normalized}{section*.4}% 5
+\BOOKMARK [2][-]{section*.7}{Point on a line}{section*.4}% 6
+\BOOKMARK [1][-]{section*.8}{Vectors}{}% 7
+\BOOKMARK [2][-]{section*.9}{Angle between vector and X-axis}{section*.8}% 8
+\BOOKMARK [2][-]{section*.10}{Translation}{section*.8}% 9
+\BOOKMARK [2][-]{section*.11}{Rotation around origin}{section*.8}% 10
+\BOOKMARK [2][-]{section*.12}{Rotation around another point}{section*.8}% 11
+\BOOKMARK [2][-]{section*.13}{Rotation around origin 3D}{section*.8}% 12

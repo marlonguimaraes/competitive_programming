@@ -1,2 +1,12 @@
-\contentsline {section}{Geometry}{3}{section*.2}% 
-\contentsline {subsection}{Points and Lines}{3}{section*.3}% 
+\contentsline {section}{Points}{3}{section*.2}% 
+\contentsline {subsection}{Comparing floating point values}{3}{section*.3}% 
+\contentsline {section}{Lines}{3}{section*.4}% 
+\contentsline {subsection}{General equation of a line}{3}{section*.5}% 
+\contentsline {subsection}{General equation of a line normalized}{3}{section*.6}% 
+\contentsline {subsection}{Point on a line}{4}{section*.7}% 
+\contentsline {section}{Vectors}{4}{section*.8}% 
+\contentsline {subsection}{Angle between vector and X-axis}{4}{section*.9}% 
+\contentsline {subsection}{Translation}{4}{section*.10}% 
+\contentsline {subsection}{Rotation around origin}{4}{section*.11}% 
+\contentsline {subsection}{Rotation around another point}{5}{section*.12}% 
+\contentsline {subsection}{Rotation around origin 3D}{5}{section*.13}% 

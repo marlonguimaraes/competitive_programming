@@ -10,3 +10,8 @@
 \contentsline {subsection}{Rotation around origin}{4}{section*.11}% 
 \contentsline {subsection}{Rotation around another point}{5}{section*.12}% 
 \contentsline {subsection}{Rotation around origin 3D}{5}{section*.13}% 
+\contentsline {subsection}{Scale}{5}{section*.14}% 
+\contentsline {subsection}{Normalization}{5}{section*.15}% 
+\contentsline {subsection}{Dot product}{6}{section*.16}% 
+\contentsline {subsection}{Angle between vectors}{6}{section*.17}% 
+\contentsline {subsection}{Cross product}{6}{section*.18}% 

@@ -37,4 +37,36 @@ Returns an angle in radians in the interval $\interval{-\pi}{+\pi}$. A positive 
 \includegraphics[width = 7in, height = 3.5in]{geometry/images/rotation3d.png}
 \end{center}
 
-\clearpage
+\subsection{Scale}
+\cppscript{geometry/src/scale}{Scale vector by a factor of sx and sy}
+
+\subsection{Normalization}
+\cppscript{geometry/src/normalize}{Returns a unit vector with the same direction as the given vector}
+
+\subsection{Dot product}
+\[
+    <\vec{u}, \vec{v}> = \vec{u} \cdot \vec{v} = u_xv_x + u_yv_y = |\vec{u}||\vec{v}|\cos \theta
+\]
+
+\cppscript{geometry/src/dot}{}
+
+\subsection{Angle between vectors}
+\cppscript{geometry/src/angle_vectors}{}
+
+\subsection{Cross product}
+
+$
+            u\times v = \begin{vmatrix}
+                \vec{i} & \vec{j} & \vec{k} \\
+                u_x & u_y & u_z \\
+                v_x & v_y & v_z \\
+            \end{vmatrix}
+$
+\begin{itemize}
+\item $|\vec{u}\times \vec{v}| = |\vec{u}||\vec{v}|\sin \theta$
+\item where $\vec{i}, \vec{j}, \vec{k}$ are unity vectors on the same direction and orientation as $x, y, z$, respectively
+\item the result vector $\vec{w}$ is orthogonal to both $\vec{u}$ and $\vec{v}$
+\item it is the area of the parallelogram formed by $\vec{u}$ and $\vec{v}$
+\end{itemize}
+
+\cppscript{geometry/src/cross}{}

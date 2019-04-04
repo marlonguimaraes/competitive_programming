@@ -4,14 +4,30 @@
 \BOOKMARK [2][-]{section*.5}{General equation of a line}{section*.4}% 4
 \BOOKMARK [2][-]{section*.6}{General equation of a line normalized}{section*.4}% 5
 \BOOKMARK [2][-]{section*.7}{Point on a line}{section*.4}% 6
-\BOOKMARK [1][-]{section*.8}{Vectors}{}% 7
-\BOOKMARK [2][-]{section*.9}{Angle between vector and X-axis}{section*.8}% 8
-\BOOKMARK [2][-]{section*.10}{Translation}{section*.8}% 9
-\BOOKMARK [2][-]{section*.11}{Rotation around origin}{section*.8}% 10
-\BOOKMARK [2][-]{section*.12}{Rotation around another point}{section*.8}% 11
-\BOOKMARK [2][-]{section*.13}{Rotation around origin 3D}{section*.8}% 12
-\BOOKMARK [2][-]{section*.14}{Scale}{section*.8}% 13
-\BOOKMARK [2][-]{section*.15}{Normalization}{section*.8}% 14
-\BOOKMARK [2][-]{section*.16}{Dot product}{section*.8}% 15
-\BOOKMARK [2][-]{section*.17}{Angle between vectors}{section*.8}% 16
-\BOOKMARK [2][-]{section*.18}{Cross product}{section*.8}% 17
+\BOOKMARK [2][-]{section*.8}{Equal and parallel lines}{section*.4}% 7
+\BOOKMARK [2][-]{section*.9}{Orthogonal}{section*.4}% 8
+\BOOKMARK [2][-]{section*.10}{Intersection}{section*.4}% 9
+\BOOKMARK [2][-]{section*.11}{Angle between lines}{section*.4}% 10
+\BOOKMARK [2][-]{section*.12}{Distance to point}{section*.4}% 11
+\BOOKMARK [2][-]{section*.13}{Bissector / Mediatriz}{section*.4}% 12
+\BOOKMARK [2][-]{section*.14}{Orientation between point and line}{section*.4}% 13
+\BOOKMARK [1][-]{section*.15}{Line segments}{}% 14
+\BOOKMARK [2][-]{section*.16}{Contains point}{section*.15}% 15
+\BOOKMARK [2][-]{section*.17}{Closest point}{section*.15}% 16
+\BOOKMARK [2][-]{section*.18}{Intersectin with segment}{section*.15}% 17
+\BOOKMARK [1][-]{section*.19}{Vectors}{}% 18
+\BOOKMARK [2][-]{section*.20}{Angle between vector and X-axis}{section*.19}% 19
+\BOOKMARK [2][-]{section*.21}{Translation}{section*.19}% 20
+\BOOKMARK [2][-]{section*.22}{Rotation around origin}{section*.19}% 21
+\BOOKMARK [2][-]{section*.23}{Rotation around another point}{section*.19}% 22
+\BOOKMARK [2][-]{section*.24}{Rotation around origin 3D}{section*.19}% 23
+\BOOKMARK [2][-]{section*.25}{Scale}{section*.19}% 24
+\BOOKMARK [2][-]{section*.26}{Normalization}{section*.19}% 25
+\BOOKMARK [2][-]{section*.27}{Dot product}{section*.19}% 26
+\BOOKMARK [2][-]{section*.28}{Angle between vectors}{section*.19}% 27
+\BOOKMARK [2][-]{section*.29}{Cross product}{section*.19}% 28
+\BOOKMARK [1][-]{section*.30}{Circles}{}% 29
+\BOOKMARK [2][-]{section*.31}{Definition}{section*.30}% 30
+\BOOKMARK [2][-]{section*.32}{Perimeter, Area}{section*.30}% 31
+\BOOKMARK [2][-]{section*.33}{From 2 points}{section*.30}% 32
+\BOOKMARK [2][-]{section*.34}{From 3 points}{section*.30}% 33

@@ -31,3 +31,6 @@
 \contentsline {subsection}{Perimeter, Area}{10}{section*.32}% 
 \contentsline {subsection}{From 2 points}{11}{section*.33}% 
 \contentsline {subsection}{From 3 points}{11}{section*.34}% 
+\contentsline {subsection}{Intersection between 2 circles}{12}{section*.35}% 
+\contentsline {subsection}{Intersection between circle and line}{13}{section*.36}% 
+\contentsline {subsection}{Intersection between circle and point}{13}{section*.37}% 

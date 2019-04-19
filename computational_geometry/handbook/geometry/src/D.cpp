@@ -1,10 +1,9 @@
-// D = 0: R pertence a reta PQ
-// D > 0: R a esquerda da reta PQ
-// D < 0: R a direita da reta PQ
-template<typename T>
-T D(const Point<T>& P, const Point<T>& Q, const Point<T>& R)
-{
-    return (P.x * Q.y + P.y * R.x + Q.x * R.y) -
-           (R.x * Q.y + R.y * P.x + Q.x * P.y);
-}
+typedef pair<long long, long long> ii;
 
+// D = 0: R lies on line PQ
+// D > 0: R is to the left of line PQ
+// D < 0: R is to the right of line PQ
+long long D(const ii &a, const ii &b, const ii &c) {
+    return (a.first * b.second + a.second * c.first + b.first * c.second)
+	     - (c.first * b.second + c.second * a.first + b.first * a.second);
+}

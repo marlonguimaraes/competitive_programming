@@ -1,3 +1,7 @@
 *.swp
 *.swo
 **main.log
+**main.toc
+**main.aux
+**main.out
+main.pdf

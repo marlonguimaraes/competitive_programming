@@ -36,7 +36,7 @@ def fibonacci_up_to(n, a0=0, a1=1):
         a1 = a
     return res
 
-def primes(n, MAX_PRIME=10**5):
+def primes(n=-1, MAX_PRIME=10**6):
     isprime = [True] * (MAX_PRIME + 1)
     p = []
     for i in range(2, MAX_PRIME + 1):
@@ -46,3 +46,16 @@ def primes(n, MAX_PRIME=10**5):
                 return p
             for j in range(i * i, len(isprime), i):
                 isprime[j] = False
+    return p
+
+def factorize(n):
+    factors = dict()
+    prims = primes(MAX_PRIME=n)
+    for p in prims:
+        exp = 0
+        while n % p == 0:
+            n = n // p
+            exp += 1
+        if exp > 0:
+            factors[p] = exp
+    return factors

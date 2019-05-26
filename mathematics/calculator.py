@@ -59,3 +59,14 @@ def factorize(n):
         if exp > 0:
             factors[p] = exp
     return factors
+
+def divisors(n):
+    sqn = int(sqrt(n))
+    divs = []
+    for p in range(1, sqn + 1):
+        if n % p == 0:
+            divs.append(p)
+            q = n // p
+            if q != p:
+                divs.append(q)
+    return sorted(divs)

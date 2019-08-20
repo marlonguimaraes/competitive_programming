@@ -26,56 +26,38 @@
  *
 */
 
-
-using namespace std;
-
-const int N = 123;
-
-int v, e;
-int in[N];
-vector< vector<int> > adj;
-
-vector<int> kahn_sort() {
-    priority_queue< int, vector<int>, greater<int> > nextVertex;
-    for(int i = 1; i <= v; ++i) { // vertices are 1 indexed, [1, |V|]
-        if(in[i] == 0) {
-            nextVertex.push(i);
+class Solution {
+public:
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<int> indegree(numCourses);
+        vector<vector<int>> adj(numCourses);
+        for(const auto &p : prerequisites) {
+            adj[p[1]].push_back(p[0]);
+            indegree[p[0]]++;
         }
-    }
-    vector<int> sorted;
-    while(!nextVertex.empty()) {
-        int u = nextVertex.top();
-        nextVertex.pop();
-        sorted.push_back(u);
-        for(int v : adj[u]) {
-            --in[v];
-            if(in[v] == 0) {
-                nextVertex.push(v);
+        
+        vector<int> q;
+        for(int u = 0; u < numCourses; u++) {
+            if(indegree[u] == 0) {
+                q.push_back(u);
             }
         }
-    }
-    return sorted;
-}
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    while(cin >> v >> e) {
-        adj.clear();
-        adj.resize(v + 10);
-        memset(in, 0, sizeof in);
-        for(int i = 0; i < e; ++i) {
-            int u, v;
-            cin >> u >> v;
-            adj[u].push_back(v);
-            ++in[v];
+        vector<int> res;
+        while(!q.empty()) {
+            const int u = q.back();
+            q.pop_back();
+            res.push_back(u);
+            
+            for(const int &v : adj[u]) {
+                indegree[v]--;
+                if(indegree[v] == 0) {
+                    q.push_back(v);
+                }
+            }
         }
-
-        vector<int> sorted = kahn_sort();
-
-        for(int k : sorted) {
-            cout << k << " ";
+        if((int) res.size() != numCourses) {
+            res.clear();
         }
-        cout << "\n";
+        return res;
     }
-    return 0;
-}
+};

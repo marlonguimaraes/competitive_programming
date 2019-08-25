@@ -19,7 +19,7 @@ inline int cint(char c) {
 }
 
 struct TrieNode {
-    TrieNode *child[ALPHABET_SIZE];
+    TrieNode *child[ALPHABET_SIZE]; // You can use hash/map if you don't know the alphabet size in advance or it's very big
     bool word;
     
     TrieNode() : child(), word() {}

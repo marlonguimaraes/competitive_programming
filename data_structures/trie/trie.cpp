@@ -20,8 +20,8 @@ inline int cint(char c) {
 
 struct TrieNode {
     TrieNode *child[ALPHABET_SIZE];
-    string word;
-
+    bool word;
+    
     TrieNode() : child(), word() {}
 };
 
@@ -54,20 +54,35 @@ public:
             }
             node = node->child[id];
         }
-        node->word = str;
+        node->word = true;
     }
 
-    inline bool contains(const string &str) {
-        TrieNode *node = root;
-        for(const char &c : str) {
-            const int id = cint(c);
-            if(node->child[id] == nullptr) {
-                return false;
-            }
-            node = node->child[id];
-        }
-        return node->word.size();
+    /** Returns if the word is in the trie. */
+    bool contains(string word) {
+        const auto pre = search_prefix(word);
+        return pre != nullptr and pre->word;
     }
+    
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    bool prefix(string prefix) {
+        const auto pre = search_prefix(prefix);
+        return pre != nullptr;
+    }
+
+	/** Returns a pointer to a node in the trie that contains the given prefix. */
+	inline TrieNode* search_prefix(const string &str) {
+        TrieNode *node = root;
+        for(const char c : str) {
+            const int id = cint(c);
+            node = node->child[id];
+            if(node == nullptr) {
+                break;
+            }
+        }
+        return node;
+    }
+
+
 
     ~Trie() {
         destroy(root);
@@ -105,6 +120,18 @@ int main() {
 
     for(const auto &p : test_cases) {
         assert(trie.contains(p.first) == p.second);
+    }
+
+    const vector<pair<string, bool>> test_prefix = {
+        {"bb", true},
+        {"b", true},
+        {"cb", true},
+        {"cbb", true},
+        {"cbd", false},
+        {"z", false},
+    };
+    for(const auto &p : test_prefix) {
+        assert(trie.prefix(p.first) == p.second);
     }
     cout << "ALL TESTS PASSED" << endl;
 

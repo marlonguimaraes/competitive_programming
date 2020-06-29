@@ -22,3 +22,7 @@ function cmp
 	set BIN_FILE "prog"
 	g++  (find . -name '*.cpp') -o $BIN_FILE -Wshadow -Wall -fsanitize=address -fsanitize=undefined -std=c++17
 end
+
+function cpy
+	cat (find . -name '*.cpp') | pbcopy
+end
